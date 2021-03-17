@@ -21,13 +21,13 @@ public class StudentRegistrationForm {
     }
 
     @Test
-    void StudentRegistrationForm() {
+    void studentRegistrationForm() {
         open("https://demoqa.com/automation-practice-form");
 
         $("#firstName").setValue("Bogdanova");
         $("#lastName").setValue("Evgeniya");
         $("#userEmail").setValue("ebogdanova123@qq.qq");
-        $(By.xpath("//label[@for='gender-radio-2']")).click();
+        $(byText("Female")).click();
         $("#userNumber").setValue("9001112233");
         $(byId("dateOfBirthInput")).click();
         $(".react-datepicker__month-select").selectOptionByValue("10");
@@ -35,8 +35,8 @@ public class StudentRegistrationForm {
         $(".react-datepicker__day.react-datepicker__day--019").click();
         $("#subjectsInput").setValue("biology").pressEnter();
         $("#subjectsInput").setValue("computer science").pressEnter();
-        $("[for='hobbies-checkbox-3']").click();
-        $("input#uploadPicture").uploadFile(new File("src/test/java/resources/test.jpg"));
+        $(byText("Music")).click();
+        $("#uploadPicture").uploadFromClasspath("test.jpg");
         $("#currentAddress").setValue("Yaroslavskaya street, Moscow, Russia");
         $("#react-select-3-input").setValue("ncr").pressEnter();
         $("#react-select-4-input").setValue("delhi").pressEnter();
