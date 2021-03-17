@@ -42,15 +42,15 @@ public class StudentRegistrationForm {
         $("#react-select-4-input").setValue("delhi").pressEnter();
         $("#submit").click();
 
-        $(By.xpath("//td[text()='Student Name']/following-sibling::td")).shouldHave(text("Bogdanova Evgeniya"));
-        $(By.xpath("//td[text()='Student Email']/following-sibling::td")).shouldHave(text("ebogdanova123@qq.qq"));
-        $(By.xpath("//td[text()='Gender']/following-sibling::td")).shouldHave(text("Female"));
-        $(By.xpath("//td[text()='Mobile']/following-sibling::td")).shouldHave(text("9001112233"));
-        $(By.xpath("//td[text()='Date of Birth']/following-sibling::td")).shouldHave(text("19 November,1997"));
-        $(By.xpath("//td[text()='Subjects']/following-sibling::td")).shouldHave(text("Biology, Computer Science"));
-        $(By.xpath("//td[text()='Hobbies']/following-sibling::td")).shouldHave(text("Music"));
-        $(By.xpath("//td[text()='Picture']/following-sibling::td")).shouldHave(text("test.jpg"));
-        $(By.xpath("//td[text()='Address']/following-sibling::td")).shouldHave(text("Yaroslavskaya street, Moscow, Russia"));
-        $(By.xpath("//td[text()='State and City']/following-sibling::td")).shouldHave(text("NCR Delhi"));
+        $(".table-responsive").shouldHave(text("Student Name Bogdanova Evgeniya"),
+                text("Student Email ebogdanova123@qq.qq"),
+                text("Gender Female"),
+                text("Mobile 9001112233"),
+                text("Date of Birth 19 November,1997"),
+                text("Subjects Biology, Computer Science"),
+                text("Hobbies Music"),
+                text("Picture test.jpg"),
+                text("Address Yaroslavskaya street, Moscow, Russia"),
+                text("State and City NCR Delhi"));
     }
 }
